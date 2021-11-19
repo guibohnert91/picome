@@ -19,8 +19,8 @@ Before you start, check if you have the following items:
 <!---Estes são apenas requisitos de exemplo. Adicionar, duplicar ou remover conforme necessário--->
 * You have a Raspberry Pico with CircuitPython. 
 * You have the CircuitPython keyboard libs.
-### 📝 Licença
+### 📝 License
 
-Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
+This project is under the MIT license. See [LICENSE](LICENSE.md) for details.
 
-[⬆ Voltar ao topo](#PicoMe)<br>
+[⬆ Go to top](#PicoMe)<br>
