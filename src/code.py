@@ -1,14 +1,10 @@
 import time
 import board
 import digitalio
-import usb_hid
 
-from adafruit_hid.keyboard import Keyboard
-from adafruit_hid.keyboard_layout_us import KeyboardLayoutUS
 from adafruit_hid.keycode import Keycode
 
-keyboard = Keyboard(usb_hid.devices)
-keyboard_layout = KeyboardLayoutUS(keyboard)
+from picome.hukeyboard import HumanKeyboard
 
 btnLeft = digitalio.DigitalInOut(board.GP15)
 btnLeft.direction = digitalio.Direction.INPUT
@@ -22,21 +18,16 @@ btnRight = digitalio.DigitalInOut(board.GP13)
 btnRight.direction = digitalio.Direction.INPUT
 btnRight.pull = digitalio.Pull.DOWN
 
+keyboard = HumanKeyboard()
+
 while True:
 	if btnLeft.value:
-		keyboard.press(Keycode.SEVEN)
-		time.sleep(0.1)
-		keyboard.release(Keycode.SEVEN)
-		# this code should be replaced after for a 'keypress event handler?'
+		keyboard.keyPress(Keycode.SEVEN)		
 
 	if btnCenter.value:
-		keyboard.press(Keycode.EIGHT)
-		time.sleep(0.1)
-		keyboard.release(Keycode.EIGHT)
+		keyboard.keyPress(Keycode.EIGHT)
 
 	if btnRight.value:
-		keyboard.press(Keycode.NINE)
-		time.sleep(0.1)
-		keyboard.release(Keycode.NINE)
+		keyboard.keyPress(Keycode.NINE)
 
 	time.sleep(0.1)
